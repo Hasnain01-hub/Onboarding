@@ -44,7 +44,7 @@ class PdfTemplate {
 
   static void pdfWriter(
       OverallInvoice overallInvoice, widgets.Document pdf) async {
-    final ByteData bytes = await rootBundle.load("image/test_header.jpg");
+    final ByteData bytes = await rootBundle.load("image/image.png");
     final headerImage = PdfImage.file(
       pdf.document,
       bytes: bytes.buffer.asUint8List(),

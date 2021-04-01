@@ -47,14 +47,23 @@ class vehicleWidget extends StatelessWidget {
             controller: vehicleDetails.vehiclenoTxtCtrl,
             maxLength: 20,
             textDirection: TextDirection.ltr,
+
             decoration: InputDecoration(labelText: "Vehicle No"),
             validator: (String value) {
               return value.isEmpty ? 'Vehicle No is Required' : null;
             },
+
             onSaved: (String value) {
               vehicleDetails.vehicleNo = value;
               vehicleDetails.vehiclenoTxtCtrl.text = vehicleDetails.vehicleNo;
             },
+              onChanged: (text) {
+                // TextSelection previousSelection = vehicleDetails.vehiclenoTxtCtrl.selection;
+                // vehicleDetails.vehiclenoTxtCtrl.text = text;
+                // vehicleDetails.vehiclenoTxtCtrl.selection = previousSelection;
+                final val = TextSelection.collapsed(offset:vehicleDetails.vehiclenoTxtCtrl.text.length);
+                vehicleDetails.vehiclenoTxtCtrl.selection = val;
+              }
           ),
           TextFormField(
             controller: vehicleDetails.modelTxtCtrl,
@@ -68,6 +77,13 @@ class vehicleWidget extends StatelessWidget {
               vehicleDetails.modelLine1 = value;
               vehicleDetails.modelTxtCtrl.text = vehicleDetails.modelLine1;
             },
+              onChanged: (text) {
+                // TextSelection previousSelection = vehicleDetails.modelTxtCtrl.selection;
+                // vehicleDetails.modelTxtCtrl.text = text;
+                // vehicleDetails.modelTxtCtrl.selection = previousSelection;
+                final val = TextSelection.collapsed(offset:vehicleDetails.modelTxtCtrl.text.length);
+                vehicleDetails.modelTxtCtrl.selection = val;
+              }
           ),
           // TextFormField(
           //   controller: billingDetails.addressLine2TxtCtrl,

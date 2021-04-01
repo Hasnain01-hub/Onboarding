@@ -43,7 +43,7 @@ class ConfirmDeleteAlertBoxButton extends StatelessWidget {
     AlertDialog alert = AlertDialog(
       title: Text("AlertDialog"),
       content: Text(
-        "Would you like to proceed with the delete of ${pdf.fileName}?",
+        "Would you like to delete pfd ${pdf.fileName}?",
       ),
       actions: [
         cancelButton,

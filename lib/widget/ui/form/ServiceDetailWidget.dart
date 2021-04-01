@@ -137,6 +137,13 @@ class _ServiceDetailWidgetState extends State<ServiceDetailWidget> {
                 serviceDetail.serviceName = value;
                 serviceDetail.serviceNameTxtCtrl.text = serviceDetail.serviceName;
               },
+                onChanged: (text) {
+                  // TextSelection previousSelection =serviceDetail.serviceNameTxtCtrl.selection;
+                  // serviceDetail.serviceNameTxtCtrl.text = text;
+                  // serviceDetail.serviceNameTxtCtrl.selection = previousSelection;
+                  final val = TextSelection.collapsed(offset:serviceDetail.serviceNameTxtCtrl.text.length);
+                  serviceDetail.serviceNameTxtCtrl.selection = val;
+                }
             ),
           ),
           SizedBox(
@@ -161,7 +168,14 @@ class _ServiceDetailWidgetState extends State<ServiceDetailWidget> {
                     //only parse when the value is valid to parse
                     serviceDetail.nettPrice = value;
                     serviceDetail.nettPriceTxtCtrl.text = serviceDetail.nettPrice;
-                }
+                },
+    onChanged: (text) {
+    // TextSelection previousSelection =serviceDetail.nettPriceTxtCtrl.selection;
+    // serviceDetail.nettPriceTxtCtrl.text = text;
+    // serviceDetail.nettPriceTxtCtrl.selection = previousSelection;
+    final val = TextSelection.collapsed(offset:serviceDetail.nettPriceTxtCtrl.text.length);
+    serviceDetail.nettPriceTxtCtrl.selection = val;
+    }
               ),
             ),
           ),

@@ -82,6 +82,13 @@ class _InvoiceDetailWidgetState extends State<InvoiceDetailWidget> {
                   widget.invoiceDetails.invoiceNumber = value;
                   widget.invoiceDetails.invoiceNoTxtCtrl.text = widget.invoiceDetails.invoiceNumber;
                 },
+                  onChanged: (text) {
+                    // TextSelection previousSelection = billingDetails.companyNameTxtCtrl.selection;
+                    // billingDetails.companyNameTxtCtrl.text = text;
+                    // billingDetails.companyNameTxtCtrl.selection = previousSelection;
+                    final val = TextSelection.collapsed(offset:widget.invoiceDetails.invoiceNoTxtCtrl.text.length);
+                    widget.invoiceDetails.invoiceNoTxtCtrl.selection = val;
+                  }
               ),
               _buildDateOfIssue(),
               _subHeaderTitle("Date Of Service"),

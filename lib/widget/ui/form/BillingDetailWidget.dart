@@ -57,11 +57,19 @@ class BillingWidget extends StatelessWidget {
               billingDetails.companyName = value;
               billingDetails.companyNameTxtCtrl.text = billingDetails.companyName;
             },
+
+              onChanged: (text) {
+                // TextSelection previousSelection = billingDetails.companyNameTxtCtrl.selection;
+                // billingDetails.companyNameTxtCtrl.text = text;
+                // billingDetails.companyNameTxtCtrl.selection = previousSelection;
+                final val = TextSelection.collapsed(offset: billingDetails.companyNameTxtCtrl.text.length);
+                billingDetails.companyNameTxtCtrl.selection = val;
+              }
           ),
           TextFormField(
             controller: billingDetails.addressLine1TxtCtrl,
             maxLength: 10,
-onChanged: (text){},
+
             textDirection: TextDirection.ltr,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(labelText: "Phone No"),
@@ -72,27 +80,48 @@ onChanged: (text){},
               billingDetails.addressLine1 = value;
               billingDetails.addressLine1TxtCtrl.text = billingDetails.addressLine1;
             },
+              onChanged: (text) {
+                // TextSelection previousSelection = billingDetails.addressLine1TxtCtrl.selection;
+                // billingDetails.addressLine1TxtCtrl.text = text;
+                // billingDetails.addressLine1TxtCtrl.selection = previousSelection;
+                final val = TextSelection.collapsed(offset: billingDetails.addressLine1TxtCtrl.text.length);
+                billingDetails.addressLine1TxtCtrl.selection = val;
+              }
 
           ),
           TextFormField(
             controller: billingDetails.addressLine2TxtCtrl,
-            maxLength: 20,
+            maxLength: 40,
             textDirection: TextDirection.ltr,
             decoration: InputDecoration(labelText: "Address Line 1"),
             onSaved: (String value) {
               billingDetails.addressLine2 = value;
               billingDetails.addressLine2TxtCtrl.text = billingDetails.addressLine2;
             },
+              onChanged: (text) {
+                // TextSelection previousSelection = billingDetails.addressLine2TxtCtrl.selection;
+                // billingDetails.addressLine2TxtCtrl.text = text;
+                // billingDetails.addressLine2TxtCtrl.selection = previousSelection;
+                final val = TextSelection.collapsed(offset: billingDetails.addressLine2TxtCtrl.text.length);
+                billingDetails.addressLine2TxtCtrl.selection = val;
+              }
           ),
           TextFormField(
             controller: billingDetails.addressLine3TxtCtrl,
-            maxLength: 20,
+            maxLength: 40,
             textDirection: TextDirection.ltr,
             decoration: InputDecoration(labelText: "Address Line 2"),
             onSaved: (String value) {
               billingDetails.addressLine3 = value;
               billingDetails.addressLine3TxtCtrl.text = billingDetails.addressLine3;
             },
+              onChanged: (text) {
+                // TextSelection previousSelection =  billingDetails.addressLine3TxtCtrl.selection;
+                // billingDetails.addressLine3TxtCtrl.text = text;
+                // billingDetails.addressLine3TxtCtrl.selection = previousSelection;
+                final val = TextSelection.collapsed(offset: billingDetails.addressLine3TxtCtrl.text.length);
+                billingDetails.addressLine3TxtCtrl.selection = val;
+              }
           ),
         ],
       ),
